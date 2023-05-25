@@ -17,6 +17,114 @@
 \professor{Professor}
 \keywords{keyword}
 
+
+% -------------------------------------------------------------------------
+\usepackage[onehalfspacing]{setspace}	%Zeilenabstand (Hier 1,5)
+\usepackage{multicol}			%Text in mehreren Spalten 
+\usepackage{multirow}
+\usepackage{helvet} 				%Schriftart Paket
+\usepackage{siunitx} 			%SI Formatierung von Einheiten und Werten
+\usepackage{color} 				%Farbe darstellen (Für listings benötigt)
+\usepackage{colortbl}			%Definition von neuen Farben
+\usepackage{ragged2e}			%Flattersatz
+\usepackage[hidelinks]{hyperref} %Verlinkungen
+\usepackage{float}				%Ermöglicht Orte von Floats zu erzwingen [H] usw.
+\usepackage{fancyhdr}			%Einstellungen für Kopf- und Fußzeile
+\usepackage[section]{placeins} 	%Sections haben immer eine Floatbarrie
+
+%Verzeichnisse
+\usepackage[printonlyused, withpage, ]{acronym} %Abkürzungsverzeichnis 
+
+%Mathe
+\usepackage{array} 				%Einbindung von Matrix 
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}				%Symbole und Pfeile
+\usepackage{amsfonts}			%Mathematische Schriftzeichen
+
+%Tabellen
+\usepackage{longtable} 			%Mehrseitige Tabellen
+\usepackage{csvsimple} 			%Einlesen von CSV Dateien als Tabelle
+\usepackage{tabularx}			%Formatmöglichkeinten für Tabellen (excel2latex)
+\usepackage{bigstrut}			%Formatmöglichkeinten für Tabellen (excel2latex)
+\usepackage{booktabs}			%Formatmöglichkeinten für Tabellen (excel2latex)
+\usepackage{tabulary}			%Formatmöglichkeinten für Tabellen (excel2latex) Zeilenumbruch 
+
+%Grafik
+\usepackage{graphicx} 			%Einbindung Bilder
+\usepackage{circuitikz} 			%Zeichnen von Stromlaufplänen
+\usepackage{pgfplots} 			%Diagramme zeichnen
+\usepackage{uml} 				%Zeichnen von UML-Diagrammen mit Tiks
+\usepackage{subfig} 				%Struktur von Bildern in Gruppen
+\usepackage{svg} 				%Einbinden von SVG-Bildern
+		
+%Programmieren
+\usepackage{listings} 			%Einbinden von Quellcode
+
+%Zitieren
+\bibliographystyle{alpha} 		%Zitierart unsrt
+
+%Einbinden von Dokumenten
+\usepackage{pdfpages} 			%Einbinden von PDF-Dateien
+
+%-------------------------------------------------------------------------------
+
+%Einstellungen der Pakete
+%-------------------------------------------------------------------------------
+\sisetup{locale = DE}  %Sinuix (SI Einheiten): Sprache DE
+\pgfplotsset{/pgf/number format/use comma} %PGF Plot (Diagramme): 
+\usetikzlibrary{patterns} %TIKS (Zeichnen allgemein): 
+\numberwithin{table}{section} %Tables nach sections nummerieren
+\numberwithin{figure}{section} %Figures nach sections nummerieren
+%Einstellung für UML-------------------------------------------------------
+
+
+%Einstellungen für Tabellenbreiten-------------------------------------------
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newcolumntype{J}[1]{>{\justifying\arraybackslash}p{#1}}
+
+
+%Farben-------------------------------------------------------
+\definecolor{middlegray}{rgb}{0.5,0.5,0.5}
+\definecolor{lightgray}{rgb}{0.8,0.8,0.8}
+\definecolor{orange}{rgb}{0.8,0.3,0.3}
+\definecolor{yac}{rgb}{0.6,0.6,0.1}
+
+%Einstellungen für Listings--------------------------------------------------
+\lstset{ 
+  numberbychapter=true
+  language=C,                 	  % the language of the code
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+ % basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=t,                    % sets the caption-position to bottom
+  commentstyle=\color{gray},   	  % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  firstnumber=0,                   % start line enumeration with line 0
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\color{black},       % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{red},    	  % string literal style
+  tabsize=2,	                  	  % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+%--------------------------------------------------------------------------
+
+
 \begin{document} % --------------------------------------------------------------------------------
 	\maketitle
 \end{document}
