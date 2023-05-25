@@ -1,0 +1,91 @@
+%% Meta Data for the PDF file
+\@ifpackageloaded{hyperref}{
+  \hypersetup{
+    pdfinfo={
+      Title={\@title},
+      Author={\@author},
+      Subject={\@subject},
+      Keywords={\@keywords}
+    }
+  }
+}{}
+%% configs for optional packages:
+\@ifpackageloaded{biblatex}{
+  \ExecuteBibliographyOptions{
+    bibwarn=true,
+    url=true,
+    isbn=false,
+  }
+}{}
+\@ifpackageloaded{siunitx}{
+  \if@german
+    \sisetup{output-decimal-marker={,}} % use comma as dezimal
+  \fi
+  \sisetup{
+    tight-spacing=true,
+    per-mode=symbol,
+    scientific-notation=engineering,
+    %exponent-to-prefix, % use this instead of sci-notatio
+    round-mode = places, % round numbers
+    round-precision = 3, % to 3 places
+  }
+}{}
+\@ifpackageloaded{listings}{
+  \PassOptionsToPackage{svgnames}{xcolor}
+  \RequirePackage{xcolor}
+  \lstset{
+    commentstyle=\color{gray},
+    keywordstyle=\color{FireBrick}\bfseries,
+    stringstyle=\color{DodgerBlue},
+    showstringspaces=false,
+    basicstyle=\ttfamily,
+    tabsize=4,
+    literate={Ö}{{\"O}}1{Ä}{{\"A}}1{Ü}{{\"U}}1{ß}{{\ss}}1{ü}{{\"u}}1{ä}{{\"a}}1{ö}{{\"o}}1,
+    escapeinside={(*@}{@*)},
+  }
+}{}
+\@ifpackageloaded{enumitem}{
+  \RequirePackage{amssymb}
+  \newlist{checklist}{itemize}{2}
+  \setlist[checklist]{label=$\square$}
+}{}
+\@ifpackageloaded{csvsimple}{
+  \csvstyle{every csv}{separator=semicolon} % global seperator for csv files
+}{}
+\@ifpackageloaded{circuitikz}{
+  \ctikzset{
+    font=\footnotesize,
+    bipole annotation style/.style={font=\tiny ,inner sep=1pt},
+  }
+}{}
+\@ifpackageloaded{pgfplots}{
+  \usepgfplotslibrary{fillbetween} % mark areas under or between graphs
+  \usetikzlibrary{patterns} % for using pattern in plots
+  \if@german
+    \pgfplotsset{/pgf/number format/use comma}
+  \fi
+  \pgfplotsset{
+    compat=1.16,
+    /pgf/number format/read comma as period,
+    every tick label/.append style={font=\tiny},
+    every axis legend/.append style={font=\footnotesize},
+    MyPlots/.style = { % Style for all plots
+      width=.6\textwidth,
+      grid=major,
+      grid style={dashed,gray!50},
+      legend pos=outer north east,
+      FM1/.style = {blue, thick, mark=x, mark size=1.5,samples=100},   % Format 1
+      FM2/.style = {orange, thick, mark=*, mark size=1,samples=100},  % Format 2
+      FM3/.style = {green, thick, mark=square*, mark size=1,samples=100}, % Format 3
+      FM4/.style = {red, thick, mark=diamond*, mark size=1,samples=100},  % Format 4
+      FM5/.style = {pink, thick, mark=triangel*, mark size=1,samples=100},% Format 5
+      errBars/.style = {error bars/.cd, y dir=both, y explicit, % ermöglicht Fehlerbalken
+              error mark options={mark size=1pt,rotate=90}},
+    }
+  }
+}{}
+\@ifpackageloaded{pgfplotstable}{
+  \pgfplotstableset{
+    col sep=semicolon, % global seperator for csv files
+  }
+}{}
