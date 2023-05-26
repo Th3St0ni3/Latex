@@ -2,21 +2,6 @@
 
 % include packages here
 
-%% projects specific data:
-\author{
-	Jan-Erik Steinmann
-}
-\matrikelnr{
-	1234567
-}
-\titlehead{titlehead}
-\subject{Subject}
-\title{Title}
-\subtitle{Subtitle}
-\date{\today}
-\professor{Professor}
-\keywords{keyword}
-
 
 % -------------------------------------------------------------------------
 \usepackage[onehalfspacing]{setspace}	%Zeilenabstand (Hier 1,5)
@@ -29,7 +14,6 @@
 \usepackage{ragged2e}			%Flattersatz
 \usepackage[hidelinks]{hyperref} %Verlinkungen
 \usepackage{float}				%Ermöglicht Orte von Floats zu erzwingen [H] usw.
-\usepackage{fancyhdr}			%Einstellungen für Kopf- und Fußzeile
 \usepackage[section]{placeins} 	%Sections haben immer eine Floatbarrie
 
 %Verzeichnisse
@@ -124,7 +108,58 @@
 }
 %--------------------------------------------------------------------------
 
+%Definitionen----------------------------------------------------------------------
+%% Projektspezifische Daten:
+\author{ % Mehrere Autoren mit Komma separieren und in einer neuen Zeile schreiben
+	Jan-Erik Steinmann
+}
+\matrikelnr{  %Mehrere Matrikelnummern mit Komma separieren und in einer neuen Zeile schreiben
+	1234567
+}
+\titlehead{Labor-/Kursname}
+\subject{Gruppennummer}
+\title{Title}
+\subtitle{Versuchsname}
+\date{\today}
+\professor{Professor}
+\keywords{keyword}
+
+% \def\platzhalter{Hier müssen die entsprechenden Daten geändert werden}
+
+\def\VersuchNR{NR}
+\def\VersuchName{Versuch}
+\def\Labor{Raum}
+
+\def\Versuchsdatum{Datum}
+\def\Versuchsstart{Start}
+\def\Versuchsende{}
+\def\Temperatur{}
+\def\Luftfeuchtigkeit{}
+\def\Luftdruck{}
+
 
 \begin{document} % --------------------------------------------------------------------------------
-	\maketitle
+  \pagenumbering{gobble}
+  \maketitle
+  \declarationAuthorship
+
+  %--------InitialVerzeichnisse und Daten
+  \include{tex/02_Inhaltsverzeichnis}
+  
+  \pagenumbering{arabic}
+  \include{tex/03_Abkürzungsverzeichnis}
+  \include{tex/03_Umgebungsbedingungen}
+  \include{tex/04_Ort_Datum_und_Uhrzeit_der_Versuchsdurchführung}
+  \include{tex/05_Inventar}
+
+  %--------Textbereich
+
+
+
+  %--------Nachbericht Verzeichnisse
+  \include{tex/06_Literaturverzeichnis}
+  \include{tex/07_Abbildungsverzeichnis}
+  \include{tex/08_Tabellenverzeichnis}
+  \include{tex/09_Anhang}
+  
 \end{document}

@@ -1,0 +1,9 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {0.1}Umgebungsbedingungen}{2}{section.0.1}%
+\contentsline {section}{\numberline {0.2}Ort, Datum und Uhrzeit der Versuchsdurchführung}{3}{section.0.2}%
+\contentsline {section}{\numberline {0.3}Inventarliste}{4}{section.0.3}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{5}{chapter*.5}%
+\contentsline {section}{Literaturverzeichnis}{5}{chapter*.5}%
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{6}{chapter*.6}%
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{7}{chapter*.7}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
