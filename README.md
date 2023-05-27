@@ -4,7 +4,7 @@ works, from lab-reports to master’s thesis's.
 The project provides custom document-classes caring the `HsH-` prefix as well as support files. These classes extend the well known KOMA-Script
 classes and customize them with specific configurations, presets and provide commonly needed features.
 
-[![Version](https://lab.it.hs-hannover.de/qxx-tul-u1/latex-template-hsh/-/badges/release.svg)](https://lab.it.hs-hannover.de/qxx-tul-u1/latex-template-hsh/-/releases)  
+[![Version](https://img.shields.io/badge/Latest%20Release-v1.1-blue)](https://github.com/Th3St0ni3/Latex/releases)  
 
 **Provided classes are:**
 
